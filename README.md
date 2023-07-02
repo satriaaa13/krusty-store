@@ -1,0 +1,2 @@
+# krusty-store
+Web
