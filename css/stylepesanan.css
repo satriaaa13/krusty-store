@@ -1,0 +1,168 @@
+:root {
+  --primary: #b6895b;
+  --bg: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: darkgrey;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  height: 100%;
+}
+
+.navbar {
+  justify-content: space-between;
+  padding: 0.9rem 5%;
+  background-color: rgba(1, 1, 1, 0.9);
+  border-bottom: 1px solid #513c28d9;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+}
+.navbar .navbar-brand {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  font-style: italic;
+}
+.navbar .navbar-brand strong {
+  color: var(--primary);
+}
+.navbar .nav-item a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+.navbar .nav-item a:hover {
+  color: var(--primary);
+}
+.navbar .nav-item a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.navbar .nav-item a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.form-control {
+  width: 350px;
+}
+
+.btn {
+  font-size: 13px;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #2d2d2d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.cell-1 {
+  border-collapse: separate;
+  border-spacing: 0 4em;
+  background: #fff;
+  border-bottom: 5px solid transparent;
+  /*background-color: gold;*/
+  background-clip: padding-box;
+}
+
+thead {
+  background: #dddcdc;
+}
+
+/*Media Queries */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print-table,
+  .print-table * {
+    visibility: visible;
+  }
+
+  .print-table {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .table td,
+  .table th {
+    border: 1px solid #000;
+    padding: 8px;
+  }
+
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4caf50;
+    color: white;
+  }
+
+  .table td img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(120, 111, 102, 0.445);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.4s;
+  }
+}
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 70%;
+  }
+}
